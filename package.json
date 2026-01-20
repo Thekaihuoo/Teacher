@@ -1,23 +1,18 @@
+
 {
-  "name": "teacher-supervision-system-2025",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "name": "dss-2025-teacher-supervision",
+  "version": "1.0.0",
+  "description": "Digital Supervision System 2025 - Professional Teacher Evaluation Platform",
   "dependencies": {
-    "react-dom": "^19.2.3",
-    "react": "^19.2.3",
-    "lucide-react": "^0.562.0",
-    "recharts": "^3.6.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "^0.460.0",
+    "recharts": "^2.13.3",
+    "sweetalert2": "^11.14.5"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "typescript": "^5.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
   }
 }

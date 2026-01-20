@@ -44,52 +44,54 @@ const Sidebar: React.FC<SidebarProps> = ({ role, name, collapsed, activeTab, onT
   const currentItems = menuItems[role] || [];
 
   return (
-    <div className="h-full sidebar-gradient text-white flex flex-col shadow-2xl">
-      <div className={`p-6 flex items-center gap-4 border-b border-white/10 ${collapsed ? 'justify-center' : ''}`}>
-        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center overflow-hidden flex-shrink-0 shadow-lg">
+    <div className="h-full bg-white text-gray-900 flex flex-col border-right border-gray-100 shadow-sm transition-all">
+      <div className={`p-6 flex items-center gap-4 border-b border-gray-50 ${collapsed ? 'justify-center' : ''}`}>
+        <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
           <img 
             src="https://img5.pic.in.th/file/secure-sv1/-668e94e3b2fda05e3.png" 
             alt="Logo" 
-            className="w-full h-full object-contain p-1"
+            className="w-full h-full object-contain p-1 invert"
           />
         </div>
         {!collapsed && (
           <div className="overflow-hidden">
-            <h1 className="font-extrabold text-xl tracking-tight leading-none text-white drop-shadow-md">DSS 2025</h1>
-            <p className="text-[10px] font-medium opacity-80 uppercase tracking-widest mt-1">SUPERVISION</p>
+            <h1 className="font-black text-lg tracking-tight leading-none text-black">DSS 2025</h1>
+            <p className="text-[9px] font-bold text-gray-400 uppercase tracking-[0.2em] mt-0.5">PLATFORM</p>
           </div>
         )}
       </div>
 
-      <nav className="flex-1 mt-8 px-4 space-y-3 overflow-y-auto">
+      <nav className="flex-1 mt-6 px-3 space-y-1 overflow-y-auto">
         {currentItems.map((item) => {
           const isActive = activeTab === item.id || (item.id === 'assignments' && activeTab === 'assignment');
           return (
             <button
               key={item.id}
               onClick={() => onTabChange(item.id)}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-300 group ${
-                isActive ? 'bg-white/20 shadow-inner' : 'hover:bg-white/10'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
+                isActive 
+                ? 'bg-gray-100 text-black font-bold shadow-sm' 
+                : 'text-gray-500 hover:bg-gray-50 hover:text-black'
               } ${collapsed ? 'justify-center' : ''}`}
             >
-              <item.icon size={22} className={`${isActive ? 'text-white' : 'text-teal-50 group-hover:text-white'} transition-colors`} />
-              {!collapsed && <span className={`font-medium ${isActive ? 'text-white' : 'text-teal-50 group-hover:text-white'}`}>{item.label}</span>}
+              <item.icon size={18} className={`${isActive ? 'text-teal-600' : 'text-gray-400 group-hover:text-gray-600'}`} />
+              {!collapsed && <span className="text-sm">{item.label}</span>}
             </button>
           );
         })}
       </nav>
 
-      <div className="p-5 space-y-5 border-t border-white/10">
+      <div className="p-4 space-y-3 border-t border-gray-50">
         <button
           onClick={onLogout}
-          className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl bg-[#EF5350]/80 hover:bg-[#EF5350] shadow-lg shadow-red-900/20 transition-all duration-300 ${collapsed ? 'justify-center' : ''}`}
+          className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-500 hover:bg-red-50 hover:text-red-600 transition-all ${collapsed ? 'justify-center' : ''}`}
         >
-          <LogOut size={22} />
-          {!collapsed && <span className="font-bold">ออกจากระบบ</span>}
+          <LogOut size={18} />
+          {!collapsed && <span className="text-sm font-bold">ออกจากระบบ</span>}
         </button>
         
         {!collapsed && (
-          <div className="text-[11px] text-center font-medium text-teal-50/70 px-2 leading-relaxed bg-black/5 py-3 rounded-xl">
+          <div className="text-[10px] text-center font-medium text-gray-400 px-2 leading-relaxed bg-gray-50 py-3 rounded-lg border border-gray-100">
             Freeman @ Cpoy Right Krukai<br/>ฝากแชร์ ฝากติดตามด้วยนะครับ
           </div>
         )}
