@@ -1,0 +1,7 @@
+{
+  "name": "Teacher Supervision System 2025",
+  "description": "A comprehensive digital system for managing teacher evaluations, assignments, and reporting with administrative controls and performance analytics.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
